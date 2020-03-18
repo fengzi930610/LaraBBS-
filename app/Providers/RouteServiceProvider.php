@@ -21,7 +21,8 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    // public const HOME = '/home';
+    public const HOME = '/';//从新设置用户认证跳转主页
 
     /**
      * Define your route model bindings, pattern filters, etc.
