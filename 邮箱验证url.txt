@@ -1,0 +1,1 @@
+http://www.laravel.test/email/verify/3?expires=1584624333&signature=9f0c0bb8f23d0034afa568053819b71fddec3c83ebdecf47a398254fb33a0aa5
