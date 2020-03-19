@@ -13,9 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/492', function () {
+    print_r([
+        rand(1,49),
+        rand(1,49),
+        rand(1,49),
+        rand(1,49),
+        rand(1,49),
+    ]);
+});
 Route::get("/", "PagesController@root")->name("root");
 
 // Auth::routes();
