@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,21 +11,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::get('/492', function () {
     print_r([
         rand(1,49),
         rand(1,49),
         rand(1,49),
         rand(1,49),
-        rand(1,49),
+        rand(1,49)
     ]);
 });
-Route::get("/", "PagesController@root")->name("root");
 
 // Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/', 'PagesController@root')->name('root');
 
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -46,5 +45,5 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 
 // Email 认证相关路由
 Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
-Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
-Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
+Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
