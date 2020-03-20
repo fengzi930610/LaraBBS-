@@ -18,7 +18,7 @@ class VerificationController extends Controller
     |
     */
 
-    use VerifiesEmails;
+    use VerifiesEmails;//功能注入
 
     /**
      * Where to redirect users after verification.
@@ -34,8 +34,8 @@ class VerificationController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('signed')->only('verify');
-        $this->middleware('throttle:6,1')->only('verify', 'resend');
+        $this->middleware('auth');//所有的控制器动作都需要登录后才能访问
+        $this->middleware('signed')->only('verify');//只有 verify 动作使用 signed 中间件进行认证
+        $this->middleware('throttle:6,1')->only('verify', 'resend');//verify 和 resend 动作做了频率限制,限定了这两个动作访问频率是 1 分钟内不能超过 6 次
     }
 }
