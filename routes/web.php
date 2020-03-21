@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,14 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/492', function () {
-    print_r([
-        rand(1,49),
-        rand(1,49),
-        rand(1,49),
-        rand(1,49),
-        rand(1,49)
-    ]);
+Route::get('/492/{id}', function (Request $request) {
+    $count = $request->route('id');
+    for($i=0; $i< $count; $i++){
+        $data = [
+            rand(1,49),
+            rand(1,49),
+            rand(1,49),
+            rand(1,49),
+            rand(1,49)
+        ];
+        print_r($data);
+    }
+    
 });
 
 // Auth::routes();
