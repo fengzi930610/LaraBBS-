@@ -15,18 +15,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/492/{id}', function (Request $request) {
+    // $orederCount = 64918+72402+51499+79122+10512.58+17225.06+18676+16427+17846.9+59157+61523+125534+65318+15595+98179.2+153240.5+323637+20100.95+72124+56111+14799;
+    // print_r($orederCount);die;//1413947.19
+    // $recharCount = 381294;
+    // print_r($recharCount);die;
     $count = $request->route('id');
+    // $count = 26;
+    $data = [];
     for($i=0; $i< $count; $i++){
         $data = [
             rand(1,49),
-            rand(1,49),
-            rand(1,49),
-            rand(1,49),
-            rand(1,49)
+            // rand(1,49),
+            // rand(1,49),
+            // rand(1,49),
+            // rand(1,49)
         ];
         print_r($data);
+        // $data[] = rand(1,49);
     }
-    
+    // sort($data);
+    // $data = array_unique($data);//数组去重
+    // print_r($data);
 });
 
 // Auth::routes();
